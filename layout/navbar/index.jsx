@@ -8,7 +8,10 @@ import DarkModeContext from '@minology/context/darkMode.context';
 import logo from '@assets/vitejs-logo.svg';
 import noProfile from '@assets/no-profile.png';
 
+import MobileDrawer from './mobile';
+
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const { darkToggler } = React.useContext(DarkModeContext);
   return (
     <Styled className="navbar">
@@ -16,7 +19,7 @@ const Navbar = () => {
       <Heading>Your App Name</Heading>
       <Space />
       <DarkToggler onClick={darkToggler} />
-      <MobileToggler onClick={() => alert('Test')} />
+      <MobileToggler onClick={() => setMobileOpen(true)} />
       <Account>
         <AccountImage src={noProfile} />
         <AccountNameContainer>
@@ -24,6 +27,7 @@ const Navbar = () => {
           <AccountRole>Administrator</AccountRole>
         </AccountNameContainer>
       </Account>
+      <MobileDrawer isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
     </Styled>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Page = ({ children }) => {
-  return <Styled className="page">{children}</Styled>;
+  return <Styled id="page-content">{children}</Styled>;
 };
 
 const Styled = styled.div`

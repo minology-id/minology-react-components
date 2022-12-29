@@ -4,17 +4,24 @@ import styled from 'styled-components';
 import { Table as AntdTable } from 'antd';
 
 const Table = ({ ...props }) => {
-  return (
-    <TableWrapper>
-      <TableStyled {...props} />
-    </TableWrapper>
-  );
+  return <TableStyled {...props} />;
 };
 
-const TableWrapper = styled.div`
-  overflow: auto;
-`;
 const TableStyled = styled(AntdTable)`
+  .ant-spin-nested-loading
+    > .ant-spin-container
+    > .ant-table
+    > .ant-table-container
+    > .ant-table-content {
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
   .ant-table-thead > tr > th {
     background-color: ${(props) => props.theme.body.high};
   }
