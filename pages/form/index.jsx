@@ -9,6 +9,7 @@ import Button from '@minology/components/Button';
 import Switch from '@minology/components/Switch';
 import Checkbox from '@minology/components/Checkbox';
 import Radio from '@minology/components/Radio';
+import TextArea from '@minology/components/TextArea';
 
 const options = [
   {
@@ -72,6 +73,9 @@ const FormPage = () => {
               error={{ message: 'Please select role' }}
               options={options}
             />
+          </Form.Item>
+          <Form.Item label="Message" name="message">
+            <TextArea />
           </Form.Item>
           <Button>Submit</Button>
         </Form>
