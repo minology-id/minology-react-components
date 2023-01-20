@@ -1,5 +1,5 @@
 import React from 'react';
-import { darken, lighten } from 'polished';
+import { darken } from 'polished';
 import styled from 'styled-components';
 import { Table as AntdTable } from 'antd';
 
@@ -30,6 +30,17 @@ const TableStyled = styled(AntdTable)`
   }
   .ant-pagination > .ant-pagination-item {
     background-color: ${(props) => props.theme.body.default};
+  }
+  .ant-table-tbody > .ant-table-row:hover {
+    & > td {
+      /* background-color: ${(props) => props.theme.body.high} !important; */
+      background-color: ${(props) =>
+        darken(0.1, props.theme.body.high)} !important;
+
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      border-radius: 0 !important;
+    }
   }
 `;
 
